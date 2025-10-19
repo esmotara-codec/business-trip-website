@@ -4,10 +4,12 @@ import React from 'react';
 import logo from './../../assets/Vector.png';
 import logoName from './../../assets/Group 1597880464.png';
 import flagIcon from './../../assets/Circle.png';
+import Container from './Container';
 const NavBar = () => {
     return (
-        <nav className='bg-white border-b border-gray-200 px-6 py-4'>
-            <div className='max-w-7xl mx-auto flex items-center justify-between'>
+        <nav className='bg-white border-b border-gray-200 '>
+           <Container>
+             <div className='container mx-auto flex items-center justify-between'>
             {/* Logo */}
              <Link href="/" className='flex items-center space-x-2'>
             <Image src={logo}
@@ -77,6 +79,7 @@ const NavBar = () => {
 
             </div>
             </div>
+           </Container>
         </nav>
     );
 };
