@@ -7,7 +7,7 @@ import flagIcon from './../../assets/Circle.png';
 import Container from './Container';
 const NavBar = () => {
     return (
-        <nav className='bg-white border-b border-gray-200 '>
+        <nav className='bg-white'>
            <Container>
              <div className='container mx-auto flex items-center justify-between'>
             {/* Logo */}
