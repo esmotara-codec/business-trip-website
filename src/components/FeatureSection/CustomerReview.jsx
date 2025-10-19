@@ -68,7 +68,7 @@ const CustomerReview = () => {
           </div>
 
           {/* Review Card 2  */}
-          <div className="bg-[#00C896] border border-[#00C896] rounded-3xl p-6 md:p-8 relative lg:w-[700px] h-auto lg:h-[400px] flex flex-col">
+          <div className="bg-[#00C896] border border-[#00C896] rounded-3xl p-6 md:p-8 relative md:w-[900px] h-auto lg:h-[400px] flex flex-col">
             {/* Quote Icon */}
             <div className="absolute top-1/2 right-6">
               <Image
@@ -80,7 +80,7 @@ const CustomerReview = () => {
             </div>
 
             {/* Text */}
-            <p className="text-base md:text-[18px]  text-[#0A0A0A] font-inter-tight font-normal leading-relaxed ">
+            <p className="text-base md:text-[24px]  text-[#0A0A0A] font-inter-tight font-normal leading-relaxed ">
               "Simly made my backpacking trip across Europe so much easier. I
               stayed connected in every country without having to switch SIM
               cards. The app was super easy to use, and I loved being able to
