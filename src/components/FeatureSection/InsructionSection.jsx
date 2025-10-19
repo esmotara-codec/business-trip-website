@@ -42,7 +42,7 @@ const InsructionSection = () => {
     <div className="bg-[#FFEBC6] py-8 md:py-12 lg:py-16">
       <div className="container mx-auto w-full px-[18px] md:px-7 md:py-4  ">
         {/* Main-Title */}
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black font-barlow-condensed text-[#0A0A0A] mb-12">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black font-barlow-condensed leading-tight tracking-tight text-[#0A0A0A] mb-12">
           HOW IT WORKS
         </h2>
 
