@@ -1,14 +1,16 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow_Condensed, Inter_Tight } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/shared/NavBar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const interTight = Inter_Tight({
   subsets: ["latin"],
+  variable: "--font-inter-tight",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
+  weight: ["900"],
+  variable: "--font-barlow-condensed",
 });
 
 export const metadata = {
@@ -20,8 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${interTight.variable} ${barlowCondensed.variable} antialiased`}
       >
+        <NavBar/>
         {children}
       </body>
     </html>
