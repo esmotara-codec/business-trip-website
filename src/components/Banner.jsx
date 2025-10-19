@@ -26,7 +26,7 @@ const Banner = () => {
                                 alt='app store icon' 
                                 width={20} 
                                 height={20}/>
-                                <span className='text-sm font-medium text-[#00C896]'>4.8 on App Store</span>
+                                <span className='text-[16px] font-medium font-inter-tight text-[#00C896]'>4.8 on App Store</span>
                             </div>
                             
                             <div className='flex items-center gap-2 rounded-full'>
@@ -35,7 +35,7 @@ const Banner = () => {
                                 width={20} 
                                 height={20}/>
                                 
-                                <span className='text-sm font-medium text-[#00C896]'>4.8 on Google Play</span>
+                                <span className='text-[16px] font-medium font-inter-tight text-[#00C896]'>4.8 on Google Play</span>
                             </div>
                         </div>
 
@@ -45,8 +45,9 @@ const Banner = () => {
                             FOR TRAVELLERS
                         </h1>
 
-                        {/* Download now*/}
-                        <p className='text-[24px] sm:text-xl text-gray-700 font-semibold'>
+                       <div className='space-y-4 lg:space-y-4'>
+                         {/* Download now*/}
+                        <p className='text-[24px] sm:text-xl text-[#4A4A4A] font-semibold font-inter-tight'>
                             Download Now!
                         </p>
 
@@ -80,6 +81,7 @@ const Banner = () => {
                                 />
                             </Link>
                         </div>
+                       </div>
                     </div>
 
                 
