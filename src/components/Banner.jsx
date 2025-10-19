@@ -11,7 +11,7 @@ import Container from './shared/Container';
 
 const Banner = () => {
     return (
-        <div className='bg-white py-10 md:py-16 lg:py-20'>
+        <div className='bg-white py-12 md:py-20 lg:py-24'>
            <Container>
              <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center'>
@@ -40,7 +40,7 @@ const Banner = () => {
                         </div>
 
                         {/* Main Heading */}
-                        <h1 className='text-5xl md:text-6xl lg:text-7xl font-black font-barlow-condensed  text-[#0A0A0A] '>
+                        <h1 className='text-7xl font-black font-barlow-condensed leading-tight tracking-tight text-[#0A0A0A]'>
                             INSTANT ESIM DATA<br />
                             FOR TRAVELLERS
                         </h1>
@@ -82,35 +82,9 @@ const Banner = () => {
                         </div>
                     </div>
 
-                    {/* Right Content - Mobile Mockup */}
-                    {/* <div className='relative flex justify-center lg:justify-end '>
-                     <div className='bg-[#00C896] border border-l-8 border-l-amber-500 rounded-full'>
-                              <div className='flex  justify-center  '>
-                            <Image
-                                src={mobileLeft}
-                                alt='Mobile app mockup'
-                                width={600}
-                                height={600}
-                                className='mt-[-80px]'
-                                priority
-                            />
-                             <Image
-                                src={mobileRight}
-                                alt='Mobile app mockup'
-                                width={700}
-                                height={700}
-                                className='ml-[-170px] mb-[-100px]'
-                                priority
-                            />
-                        
-                        
-                        </div>
-                        </div>
-                       
-                          
-                    </div> */}
+                
 
-                    {/* ===== RIGHT CONTENT (Phones + Circle) ===== */}
+                    {/*  RIGHT CONTENT Phones */}
           <div className="relative flex justify-center lg:justify-end mr-32">
             {/* Circular background */}
             <div className="absolute w-[420px] h-[420px] md:w-[580px] md:h-[570px] bg-[#00C896] rounded-full z-20"></div>

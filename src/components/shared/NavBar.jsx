@@ -14,14 +14,14 @@ const NavBar = () => {
              <Link href="/" className='flex items-center space-x-2'>
             <Image src={logo}
             alt='logo'
-            width={30}
+            width={40}
             height={40}
             />
             
             <Image src={logoName}
             alt='logo name'
-            width={50}
-            height={50}
+            width={70}
+            height={70}
             />
             </Link>
 
