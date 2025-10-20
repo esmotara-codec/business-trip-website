@@ -132,23 +132,20 @@ const NavBar = () => {
                 <div className="flex flex-col h-full overflow-y-auto py-4">
                   <Link
                     href="/buy-plans"
-                    onClick={() => setIsMenuOpen(false)}
                     className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium"
                   >
                     Buy Plans
                   </Link>
 
                   <Link
-                    href="/help-center"
-                    onClick={() => setIsMenuOpen(false)}
+                    href="/help-center"   
                     className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium"
                   >
                     Help Center
                   </Link>
 
                   <Link
-                    href="/contact-us"
-                    onClick={() => setIsMenuOpen(false)}
+                    href="/contact-us" 
                     className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium"
                   >
                     Contact Us
@@ -167,7 +164,6 @@ const NavBar = () => {
 
                   <Link
                     href="/login"
-                    onClick={() => setIsMenuOpen(false)}
                     className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium"
                   >
                     Login
@@ -175,7 +171,6 @@ const NavBar = () => {
 
                   <Link
                     href="/signup"
-                    onClick={() => setIsMenuOpen(false)}
                     className="mx-6 mt-4 bg-[#00C896] hover:bg-[#048f6c] text-white text-center py-2 rounded-full font-semibold transition-colors"
                   >
                     Sign Up
