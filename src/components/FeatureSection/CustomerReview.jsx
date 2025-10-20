@@ -68,7 +68,7 @@ const CustomerReview = () => {
           </div>
 
           {/* Review Card 2  */}
-          <div className="bg-[#00C896] border border-[#00C896] rounded-3xl p-6 md:p-8 relative md:w-[900px] h-auto lg:h-[400px] flex flex-col">
+          <div className="bg-[#00C896] border border-[#00C896] rounded-3xl p-6 md:p-8 relative w-[500px] md:w-[900px] h-auto lg:h-[400px] flex flex-col">
             {/* Quote Icon */}
             <div className="absolute top-1/2 right-6">
               <Image
