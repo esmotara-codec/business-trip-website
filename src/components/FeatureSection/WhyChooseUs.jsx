@@ -66,7 +66,7 @@ const WhyChooseUs = () => {
               </div>
 
               {/* Heading */}
-              <h2 className="text-5xl sm:text-6xl md:text-7xl font-black font-barlow-condensed text-[#0A0A0A] leading-tight tracking-tight">
+              <h2 className="text-5xl sm:text-6xl md:text-7xl font-black font-barlow-condensed text-[#000000] leading-tight tracking-tight">
                 WHY CHOOSE
                 <br />
                 TELZEN?
