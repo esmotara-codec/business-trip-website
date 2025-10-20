@@ -129,7 +129,7 @@ const PopularDestination = () => {
           {/* Right Content - Destination Cards */}
           <div className="flex gap-5 pb-4 overflow-x-auto scrollbar-hide w-full ">
             {/* New Zealand Card */}
-            <div className="bg-[#00C896] min-w-[260px]  rounded-3xl p-2 md:p-6 text-white flex-shrink-0 space-y-3">
+            <div className="bg-[#00C896] min-w-[260px]  rounded-3xl p-6 text-white flex-shrink-0 space-y-4">
               <div className="w-12 h-12 rounded-full flex items-center justify-center">
                 <Image
                   src={newZealandFlag}
@@ -139,22 +139,22 @@ const PopularDestination = () => {
                   className=" rounded-full"
                 />
               </div>
-              <div className="mb-10 md:mb-24">
+              <div className="mb-8 md:mb-16">
                 <h3 className="text-xl md:text-[28px] font-inter-tight font-semibold">
                   {" "}
                   New Zealand
                 </h3>
                 <p className="text-sm md:text-[18px]  font-inter-tight">
-                  Start from $6.92
+                  Start from $9.99
                 </p>
               </div>
-              <button className="w-full bg-white text-[#00C896] py-2 my-5  rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
+              <button className=" w-full bg-white text-[#00C896] py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
                 View Details
               </button>
             </div>
 
             {/* Japan Card */}
-            <div className="bg-[#006752] min-w-[260px]  rounded-3xl p-6 text-white flex-shrink-0 space-y-3">
+            <div className="bg-[#006752] min-w-[260px]  rounded-3xl p-6 text-white flex-shrink-0 space-y-4 ">
               <div className="w-12 h-12  rounded-full flex items-center justify-center">
                 <Image
                   src={japanFlag}
@@ -163,12 +163,12 @@ const PopularDestination = () => {
                   height={100}
                 />
               </div>
-              <div className="mb-10 md:mb-24">
+              <div className="mb-8 md:mb-16">
                 <h3 className="text-xl md:text-[28px] font-inter-tight font-semibold">
                   Japan
                 </h3>
                 <p className="text-sm md:text-[18px]  font-inter-tight">
-                  Start from $6.99
+                  Start from $9.99
                 </p>
               </div>
               <button className="w-full bg-white text-[#00C896] py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
@@ -186,15 +186,15 @@ const PopularDestination = () => {
                   height={100}
                 />
               </div>
-              <div className="mb-10 md:mb-24">
+              <div className="mb-8 md:mb-16">
                 <h3 className="text-xl md:text-[28px] font-inter-tight font-semibold">
                   Germany
                 </h3>
                 <p className="text-sm md:text-[18px]  font-inter-tight">
-                  Start from $7.04
+                  Start from $9.99
                 </p>
               </div>
-              <button className="w-full bg-white text-[#00C896] py-2 my-5 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
+              <button className="w-full bg-white text-[#00C896] py-2  rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
                 View Details
               </button>
             </div>

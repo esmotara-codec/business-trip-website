@@ -46,7 +46,7 @@ const CustomerReview = () => {
             <div className="flex items-center gap-2 mb-6 md:mb-10"></div>
 
             {/* User Info */}
-            <div className="flex items-center gap-3 mt-8 md:mt-24">
+            <div className="flex items-center gap-3 mt-8 md:mt-32">
               <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200">
                 <Image
                   src={avatar1}
@@ -68,7 +68,7 @@ const CustomerReview = () => {
           </div>
 
           {/* Review Card 2  */}
-          <div className="bg-[#00C896] border border-[#00C896] rounded-3xl p-6 md:p-8 relative w-full md:w-auto lg:w-[900px]  flex flex-col">
+          <div className="bg-[#00C896] border border-[#00C896] rounded-3xl p-6 md:p-8 relative w-full md:w-auto lg:w-[600px]  flex flex-col">
             {/* Quote Icon */}
             <div className="absolute top-1/2 right-6">
               <Image
@@ -80,7 +80,7 @@ const CustomerReview = () => {
             </div>
 
             {/* Text */}
-            <p className="text-sm md:text-[20px] text-[#0A0A0A] font-inter-tight font-normal leading-relaxed tracking-tight ">
+            <p className="text-sm md:text-[22px] text-[#0A0A0A] font-inter-tight font-normal leading-relaxed tracking-tight ">
               "Simly made my backpacking trip across Europe so much easier. I
               stayed connected in every country without having to switch SIM
               cards. The app was super easy to use, and I loved being able to
@@ -155,7 +155,7 @@ const CustomerReview = () => {
             <div className="flex items-center gap-2 mb-6 md:mb-10"></div>
 
             {/* User Info */}
-            <div className="flex items-center gap-3 mt-8 md:mt-24">
+            <div className="flex items-center gap-3 mt-8 md:mt-28">
               <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200">
                 <Image
                   src={avatar3}
