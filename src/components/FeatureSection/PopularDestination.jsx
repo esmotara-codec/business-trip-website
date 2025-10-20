@@ -154,8 +154,8 @@ const PopularDestination = () => {
             </div>
 
             {/* Japan Card */}
-            <div className="bg-[#006752] min-w-[260px]  rounded-3xl p-6 text-white flex-shrink-0 space-y-4">
-              <div className="w-16 h-16  rounded-full flex items-center justify-center">
+            <div className="bg-[#006752] min-w-[260px]  rounded-3xl p-6 text-white flex-shrink-0 space-y-3">
+              <div className="w-12 h-12  rounded-full flex items-center justify-center">
                 <Image
                   src={japanFlag}
                   alt="Japan flag"
