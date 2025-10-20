@@ -132,27 +132,27 @@ const NavBar = () => {
                 <div className="flex flex-col h-full overflow-y-auto py-4">
                   <Link
                     href="/buy-plans"
-                    className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium"
+                    className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium font-inter-tight"
                   >
                     Buy Plans
                   </Link>
 
                   <Link
                     href="/help-center"   
-                    className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium"
+                    className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium font-inter-tight"
                   >
                     Help Center
                   </Link>
 
                   <Link
                     href="/contact-us" 
-                    className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium"
+                    className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium font-inter-tight"
                   >
                     Contact Us
                   </Link>
 
                   {/* Language */}
-                  <button className="flex items-center gap-2 px-6 py-3 text-gray-700 hover:text-[#00C896] text-base">
+                  <button className="flex items-center gap-2 px-6 py-3 text-gray-700 hover:text-[#00C896] text-base font-inter-tight">
                     <Image
                       src={flagIcon}
                       alt="flag icon"
@@ -164,14 +164,14 @@ const NavBar = () => {
 
                   <Link
                     href="/login"
-                    className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium"
+                    className="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#00C896] text-base font-medium font-inter-tight"
                   >
                     Login
                   </Link>
 
                   <Link
                     href="/signup"
-                    className="mx-6 mt-4 bg-[#00C896] hover:bg-[#048f6c] text-white text-center py-2 rounded-full font-semibold transition-colors"
+                    className="mx-6 mt-4 bg-[#00C896] hover:bg-[#048f6c] text-white text-center py-2 rounded-full font-inter-tight font-semibold transition-colors"
                   >
                     Sign Up
                   </Link>
