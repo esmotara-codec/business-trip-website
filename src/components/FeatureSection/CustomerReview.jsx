@@ -46,7 +46,7 @@ const CustomerReview = () => {
             <div className="flex items-center gap-2 mb-6 md:mb-10"></div>
 
             {/* User Info */}
-            <div className="flex items-center gap-3 mt-8 md:mt-20">
+            <div className="flex items-center gap-3 mt-8 md:mt-24">
               <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200">
                 <Image
                   src={avatar1}
@@ -155,7 +155,7 @@ const CustomerReview = () => {
             <div className="flex items-center gap-2 mb-6 md:mb-10"></div>
 
             {/* User Info */}
-            <div className="flex items-center gap-3 mt-8 md:mt-20">
+            <div className="flex items-center gap-3 mt-8 md:mt-24">
               <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200">
                 <Image
                   src={avatar3}

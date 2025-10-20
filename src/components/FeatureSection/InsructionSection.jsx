@@ -66,7 +66,7 @@ const InsructionSection = () => {
                 </h3>
                 {/* Description */}
                 <p className="text-[18px] text-[#4A4A4A] font-inter-tight font-normal ">
-                  Choose from over 180 countries within the app.
+                  {step.description}
                 </p>
               </div>
             </div>

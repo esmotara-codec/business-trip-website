@@ -49,9 +49,9 @@ const WhyChooseUs = () => {
     <div className="bg-white py-12 md:py-16 lg:py-20">
       <Container>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#FFB94A] grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-36 items-center p-5 md:p-8 lg:p-12 rounded-3xl">
+          <div className="bg-[#FFB94A] flex flex-col lg:flex-row justify-between gap-8 md:gap-12 items-center p-5 md:p-8 lg:p-12 rounded-3xl">
             {/* Left Content  */}
-            <div className=" rounded-3xl p-8 md:p-12 lg:p-16 space-y-6">
+            <div className="rounded-3xl p-8 md:p-12 lg:p-16 space-y-6">
               {/* Icon */}
               <div className="flex items-center justify-start">
                 <div className="">
@@ -66,7 +66,7 @@ const WhyChooseUs = () => {
               </div>
 
               {/* Heading */}
-              <h2 className="text-5xl sm:text-6xl md:text-7xl font-black  font-barlow-condensed text-[#0A0A0A] leading-tight tracking-tight">
+              <h2 className="text-5xl sm:text-6xl md:text-7xl font-black font-barlow-condensed text-[#0A0A0A] leading-tight tracking-tight">
                 WHY CHOOSE
                 <br />
                 TELZEN?
@@ -79,7 +79,7 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Right Content  */}
-            <div className="space-y-4">
+            <div className=" w-[480px] space-y-4">
               {accordionData.map((item) => (
                 <div
                   key={item.id}

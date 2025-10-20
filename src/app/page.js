@@ -10,6 +10,7 @@ const page = () => {
   return (
     <div>
      <Banner/>
+     <PopularDestination/>
      <InsructionSection/>
      <WhyChooseUs/>
      <CustomerReview/>
