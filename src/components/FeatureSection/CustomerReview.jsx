@@ -15,7 +15,7 @@ const CustomerReview = () => {
     <div className="bg-white py-12 md:py-16 lg:py-20">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-8">
         {/* Section Title */}
-        <h2 className="text-4xl sm:text-5xl md:text-7xl font-black font-barlow-condensed text-[#000000] leading-tight tracking-tighter  text-center mb-12">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-black font-barlow-condensed text-[#000000] leading-[100%] tracking-tighter  text-center mb-12">
           CUSTOMERS  SAID
           <br />
           ABOUT US

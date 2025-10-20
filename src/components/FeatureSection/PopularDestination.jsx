@@ -85,11 +85,11 @@ const PopularDestination = () => {
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 xl:grid-cols-2  gap-5 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-2  gap-5 lg:gap-15 items-start">
           {/* Left Content */}
-          <div className="space-y-6 pr-32 md:pr-32">
+          <div className="space-y-6 pr-20 lg:pr-14">
             {/* Main Heading */}
-            <h2 className="text-4xl sm:text-5xl md:text-[92px] font-black font-barlow-condensed text-[#000000] leading-tight tracking-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-[80px] font-black font-barlow-condensed text-[#000000] leading-tight tracking-tight">
               FIND
               <br />
               POPULAR
@@ -98,7 +98,7 @@ const PopularDestination = () => {
             </h2>
 
             {/* Description */}
-            <p className="text-[#4A4A4A] font-inter-tight text-sm md:text-[20px]">
+            <p className="text-[#4A4A4A] font-inter-tight text-sm md:text-[19px]">
               Discover our most popular destinations, with 200,000+ happy
               customers!
             </p>

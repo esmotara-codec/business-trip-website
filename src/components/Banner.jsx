@@ -92,7 +92,7 @@ const Banner = () => {
             </div>
 
             {/*  RIGHT CONTENT -Mobile MockUP */}
-            <div className="relative flex justify-center lg:justify-end mr-0 md:mr-0 lg:mr-3 xl:mr-32  p-6 lg:p-0 mt-12 lg:mt-0">
+            <div className="relative flex justify-center lg:justify-end mr-0 md:mr-0 lg:mr-3 xl:pr-32 2xl:pr-64 p-6 lg:p-0 mt-12 lg:mt-0">
               {/* Circular background */}
               <div className="absolute w-[250px] h-[250px] sm:w-[350px] sm:h-[320px] md:w-[580px] md:h-[570px] lg:w-[447px] lg:h-[447px]  bg-[#00C896] rounded-full z-20"></div>
               <div className="absolute w-[230px] h-[230px] sm:w-[460px] sm:h-[460px] md:w-[560px] md:h-[560px] lg:w-[425px] lg:h-[430px] bg-[#FBBF24] rounded-full z-10 -translate-x-5  md:-translate-x-9 -lg:translate-x-[50px] -xl:translate-x-[60px]  translate-y-5"></div>
@@ -104,7 +104,7 @@ const Banner = () => {
                   alt="Mobile Left"
                   width={700}
                   height={700}
-                  className="h-[270px]  sm:h-[450px] md:h-[600px] lg:h-[470px] translate-x-[60px] sm:translate-x-[80px] md:translate-x-[100px] lg:translate-x-[60px] xl:translate-x-[90px] -translate-y-[25px] sm:-translate-y-[30px] md:-translate-y-[40px]"
+                  className="h-[270px] sm:h-[450px] md:h-[600px] lg:h-[470px] translate-x-[60px] sm:translate-x-[80px] md:translate-x-[100px] lg:translate-x-[60px] xl:translate-x-[80px] -translate-y-[25px] sm:-translate-y-[30px] md:-translate-y-[40px]"
                   priority
                 />
                  {/*  Right Phone */}

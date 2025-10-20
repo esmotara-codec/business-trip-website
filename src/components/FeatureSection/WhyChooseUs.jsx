@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#FFB94A] flex flex-col lg:flex-row justify-between gap-8 md:gap-12 items-center p-5 md:p-8 lg:p-12 rounded-3xl">
             {/* Left Content  */}
-            <div className="rounded-3xl p-8 md:p-12 lg:p-16 space-y-6">
+            <div className="rounded-3xl p-8 md:p-12 lg:p-10 space-y-6">
               {/* Icon */}
               <div className="flex items-center justify-start">
                 <div className="">
@@ -66,7 +66,7 @@ const WhyChooseUs = () => {
               </div>
 
               {/* Heading */}
-              <h2 className="text-5xl sm:text-6xl md:text-7xl font-black font-barlow-condensed text-[#000000] leading-tight tracking-tight">
+              <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-black font-barlow-condensed text-[#000000] leading-[100%] tracking-tight">
                 WHY CHOOSE
                 <br />
                 TELZEN?

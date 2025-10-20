@@ -53,7 +53,7 @@ const FrequentlyAsk = () => {
           </div>
 
           {/*  FAQ Accordion */}
-          <div className="space-y-6 px-5 md:px-10 lg:px-20">
+          <div className="space-y-6  ">
             {faqData.map((faq) => (
               <div
                 key={faq.id}
@@ -66,7 +66,7 @@ const FrequentlyAsk = () => {
                   onClick={() => toggleAccordion(faq.id)}
                   className="w-full flex items-center justify-between  text-left"
                 >
-                  <h3 className="text-base md:text-[24px] font-semibold text-white font-inter-tight pr-4 tracking-tight">
+                  <h3 className="text-base md:text-[24px] font-semibold text-white font-inter-tight pr-4 ">
                     {faq.question}
                   </h3>
                   <div className="flex-shrink-0">
