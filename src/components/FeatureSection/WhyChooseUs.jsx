@@ -79,7 +79,7 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Right Content  */}
-            <div className=" w-[480px] space-y-4">
+            <div className="w-full  lg:w-[480px] space-y-4">
               {accordionData.map((item) => (
                 <div
                   key={item.id}
