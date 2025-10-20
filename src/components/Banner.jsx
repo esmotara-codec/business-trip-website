@@ -46,7 +46,7 @@ const Banner = () => {
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-5xl md:text-5xl lg:text-7xl font-black font-barlow-condensed leading-tight tracking-tight text-[#0A0A0A]">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-black font-barlow-condensed leading-tight tracking-tight text-[#0A0A0A]">
                 INSTANT ESIM DATA
                 <br />
                 FOR TRAVELLERS
@@ -92,27 +92,28 @@ const Banner = () => {
             </div>
 
             {/*  RIGHT CONTENT -Mobile MockUP */}
-            <div className="relative flex justify-center lg:justify-end mr-0 md:mr-10 lg:mr-20 xl:mr-32 p-6 lg:p-0 mt-12 lg:mt-0">
+            <div className="relative flex justify-center lg:justify-end mr-0 md:mr-0 lg:mr-3 xl:mr-32  p-6 lg:p-0 mt-12 lg:mt-0">
               {/* Circular background */}
-              <div className="absolute w-[250px] h-[220px] sm:w-[350px] sm:h-[320px] md:w-[480px] md:h-[470px] lg:w-[580px] lg:h-[570px] bg-[#00C896] rounded-full z-20"></div>
-              <div className="absolute w-[260px] h-[360px] sm:w-[460px] sm:h-[460px] md:w-[500px] md:h-[500px] lg:w-[560px] lg:h-[560px] bg-[#FBBF24] rounded-full z-10 -translate-x-5 md:-translate-x-9 translate-y-5"></div>
+              <div className="absolute w-[250px] h-[250px] sm:w-[350px] sm:h-[320px] md:w-[580px] md:h-[570px] lg:w-[447px] lg:h-[447px]  bg-[#00C896] rounded-full z-20"></div>
+              <div className="absolute w-[230px] h-[230px] sm:w-[460px] sm:h-[460px] md:w-[560px] md:h-[560px] lg:w-[425px] lg:h-[430px] bg-[#FBBF24] rounded-full z-10 -translate-x-5  md:-translate-x-9 -lg:translate-x-[50px] -xl:translate-x-[60px]  translate-y-5"></div>
 
-              {/* Phones */}
+              {/*  Left Phone */}
               <div className="flex justify-center z-30">
                 <Image
                   src={mobileLeft}
                   alt="Mobile Left"
                   width={700}
                   height={700}
-                  className="h-[400px]  sm:h-[500px] md:h-[500px] lg:h-[600px] translate-x-[60px] sm:translate-x-[80px] md:translate-x-[80px] lg:translate-x-[100px] -translate-y-[20px] sm:-translate-y-[30px] md:-translate-y-[40px]"
+                  className="h-[270px]  sm:h-[450px] md:h-[600px] lg:h-[470px] translate-x-[60px] sm:translate-x-[80px] md:translate-x-[100px] lg:translate-x-[60px] xl:translate-x-[90px] -translate-y-[25px] sm:-translate-y-[30px] md:-translate-y-[40px]"
                   priority
                 />
+                 {/*  Right Phone */}
                 <Image
                   src={mobileRight}
                   alt="Mobile Right"
                   width={700}
                   height={700}
-                  className="h-[450px] w-auto sm:h-[550px] md:h-[550px] lg:h-[650px] -translate-x-[40px] sm:-translate-x-[60px] md:-translate-x-[60px] lg:-translate-x-[70px] translate-y-[30px] sm:translate-y-[40px] md:translate-y-[50px]"
+                  className="h-[310px]  sm:h-[550px] md:h-[650px] lg:h-[480px] xl:h-[530px] -translate-x-[30px] sm:-translate-x-[60px] md:-translate-x-[70px] -lg:translate-x-[20px] -xl:translate-x-7 translate-y-[10px] sm:translate-y-[40px] md:translate-y-[50px] xl:translate-y-3"
                 />
               </div>
             </div>
