@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className="bg-white py-4 md:py-6 lg:py-8">
       <Container>
-        <footer className="container mx-auto flex justify-between items-center ">
+        <footer className="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-0 px-4 sm:px-6 lg:px-8 ">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image src={logo} alt="logo" width={40} height={40} />

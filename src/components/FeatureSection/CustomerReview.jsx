@@ -15,8 +15,8 @@ const CustomerReview = () => {
     <div className="bg-white py-12 md:py-16 lg:py-20">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-8">
         {/* Section Title */}
-        <h2 className="text-4xl sm:text-5xl md:text-7xl font-black font-barlow-condensed text-[#000000] leading-tight tracking-tight text-center mb-12">
-          CUSTOMERS SAID
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-black font-barlow-condensed text-[#000000] leading-tight tracking-tighter  text-center mb-12">
+          CUSTOMERS  SAID
           <br />
           ABOUT US
         </h2>
@@ -24,7 +24,7 @@ const CustomerReview = () => {
         {/* Reviews Grid */}
         <div className="flex flex-col lg:flex-row gap-6 items-stretch justify-center">
           {/* Review Card 1 */}
-          <div className="bg-white border border-gray-200 rounded-3xl p-6 md:p-8 relative lg:w-[380px] h-auto lg:h-[400px] flex flex-col">
+          <div className="bg-white border border-gray-200 rounded-3xl p-6 md:p-8 relative lg:w-[380px]  flex flex-col">
             {/* Quote Icon */}
             <div className="absolute top-1/2 right-6">
               <Image
@@ -36,7 +36,7 @@ const CustomerReview = () => {
             </div>
 
             {/* Text */}
-            <p className="text-base md:text-[18px] font-normal text-[#4A4A4A] font-inter-tight leading-relaxed ">
+            <p className="text-base md:text-[18px] font-normal text-[#4A4A4A] font-inter-tight leading-relaxed tracking-tight ">
               "As a frequent business traveler, reliable connectivity is a must,
               and Simly delivers. Setting up the eSIM was quick, and I could
               stay connected during back-to-back trips in multiple countries.
@@ -68,7 +68,7 @@ const CustomerReview = () => {
           </div>
 
           {/* Review Card 2  */}
-          <div className="bg-[#00C896] border border-[#00C896] rounded-3xl p-6 md:p-8 relative w-[500px] md:w-[900px] h-auto lg:h-[400px] flex flex-col">
+          <div className="bg-[#00C896] border border-[#00C896] rounded-3xl p-6 md:p-8 relative w-full md:w-auto lg:w-[900px]  flex flex-col">
             {/* Quote Icon */}
             <div className="absolute top-1/2 right-6">
               <Image
@@ -80,7 +80,7 @@ const CustomerReview = () => {
             </div>
 
             {/* Text */}
-            <p className="text-base md:text-[24px]  text-[#0A0A0A] font-inter-tight font-normal leading-relaxed ">
+            <p className="text-sm md:text-[20px] text-[#0A0A0A] font-inter-tight font-normal leading-relaxed tracking-tight ">
               "Simly made my backpacking trip across Europe so much easier. I
               stayed connected in every country without having to switch SIM
               cards. The app was super easy to use, and I loved being able to
@@ -134,7 +134,7 @@ const CustomerReview = () => {
           </div>
 
           {/* Review Card 3 */}
-          <div className="bg-white border border-gray-200 rounded-3xl p-6 md:p-8 relative lg:w-[380px] h-auto lg:h-[400px] flex flex-col">
+          <div className="bg-white border border-gray-200 rounded-3xl p-6 md:p-8 relative lg:w-[380px]  flex flex-col">
             {/* Quote Icon */}
             <div className="absolute top-1/2 right-6">
               <Image
@@ -146,7 +146,7 @@ const CustomerReview = () => {
             </div>
 
             {/* Text */}
-            <p className="text-base md:text-[18px]  text-[#4A4A4A] font-inter-tight font-normal leading-relaxed ">
+            <p className="text-base md:text-[18px]  text-[#4A4A4A] font-inter-tight font-normal leading-relaxed tracking-tight ">
               "As a frequent business traveler, reliable connectivity is a must,
               and Simly delivers. Setting up the eSIM was quick, and I could
               stay connected during back-to-back trips in multiple countries.
