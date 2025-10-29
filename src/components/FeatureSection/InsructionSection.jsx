@@ -62,7 +62,7 @@ const InsructionSection = () => {
               <div className="flex flex-col space-y-1">
                 {/* Title */}
                 <h3 className="text-[24px] font-semibold font-inter-tight text-[#0A0A0A]">
-                  Select Destination
+                  {step.title}
                 </h3>
                 {/* Description */}
                 <p className="text-[18px] text-[#4A4A4A] font-inter-tight font-normal ">
