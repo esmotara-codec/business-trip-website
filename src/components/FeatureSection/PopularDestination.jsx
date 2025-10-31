@@ -1,15 +1,205 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import newZealandFlag from "./../../assets/Element.png";
-import japanFlag from "./../../assets/Circle (2).png";
-import germanyFlag from "./../../assets/Country Icon.png";
+import React, { useState, useEffect } from "react";
 import Container from "../shared/Container";
 import viewArrow from "./../../assets/Frame 2147224773.png";
+import axios from "axios";
 
 const PopularDestination = () => {
   const [activeTab, setActiveTab] = useState("countries");
+  const [countries, setCountries] = useState([]);
+  const [regions, setRegions] = useState([]);
+  const [displayData, setDisplayData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const limit = 3; 
+
+  // Fetch Countries
+  const fetchCountries = async (page = 1, search = "") => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const response = await axios.get(
+        "https://test.telzen.digital/api/v1/country/all",
+        {
+          params: {
+            page: page,
+            limit: limit,
+            search: search
+          }
+        }
+      );
+      
+      if (response.data?.data && Array.isArray(response.data.data)) {
+        const activeCountries = response.data.data.filter(
+          country => country.status === "active"
+        );
+        
+        setCountries(activeCountries);
+        setDisplayData(activeCountries.slice(0, 3));
+        setTotalPages(response.data.meta?.total_pages || 1);
+        console.log("Countries fetched:", activeCountries);
+      } else {
+        setCountries([]);
+        setDisplayData([]);
+      }
+    } catch (error) {
+      console.error("Error fetching countries:", error);
+      setError("Failed to load countries");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Fetch Regions
+  const fetchRegions = async (page = 1, search = "") => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const response = await axios.get(
+        "https://test.telzen.digital/api/v1/region/all",
+        {
+          params: {
+            page: page,
+            limit: limit,
+            search: search
+          }
+        }
+      );
+      
+      if (response.data?.data && Array.isArray(response.data.data)) {
+        const activeRegions = response.data.data.filter(
+          region => region.status === "active"
+        );
+        
+        setRegions(activeRegions);
+        setDisplayData(activeRegions.slice(0, 3));
+        setTotalPages(response.data.meta?.total_pages || 1);
+        console.log("Regions fetched:", activeRegions);
+      } else {
+        setRegions([]);
+        setDisplayData([]);
+      }
+    } catch (error) {
+      console.error("Error fetching regions:", error);
+      setError("Failed to load regions");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Initial fetch based on active tab
+  useEffect(() => {
+    setCurrentPage(1);
+    setSearchQuery("");
+    if (activeTab === "countries") {
+      fetchCountries(1);
+    } else {
+      fetchRegions(1);
+    }
+  }, [activeTab]);
+
+  // Handle search
+  const handleSearch = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    setCurrentPage(1);
+    
+    if (activeTab === "countries") {
+      if (query === "") {
+        setDisplayData(countries.slice(0, 3));
+      } else {
+        const filtered = countries.filter(country =>
+          country.name.toLowerCase().includes(query.toLowerCase())
+        ).slice(0, 3);
+        setDisplayData(filtered);
+      }
+    } else {
+      if (query === "") {
+        setDisplayData(regions.slice(0, 3));
+      } else {
+        const filtered = regions.filter(region =>
+          region.name.toLowerCase().includes(query.toLowerCase())
+        ).slice(0, 3);
+        setDisplayData(filtered);
+      }
+    }
+  };
+
+  // Handle pagination
+  const handleNext = () => {
+    const nextPage = currentPage + 1;
+    setCurrentPage(nextPage);
+    
+    if (activeTab === "countries") {
+      const startIndex = (nextPage - 1) * limit;
+      const endIndex = startIndex + limit;
+      const nextData = countries.slice(startIndex, endIndex);
+      
+      if (nextData.length > 0) {
+        setDisplayData(nextData);
+      } else if (nextPage > Math.ceil(countries.length / limit)) {
+        // Loop back to first page
+        setCurrentPage(1);
+        setDisplayData(countries.slice(0, 3));
+      }
+    } else {
+      const startIndex = (nextPage - 1) * limit;
+      const endIndex = startIndex + limit;
+      const nextData = regions.slice(startIndex, endIndex);
+      
+      if (nextData.length > 0) {
+        setDisplayData(nextData);
+      } else if (nextPage > Math.ceil(regions.length / limit)) {
+        // Loop back to first page
+        setCurrentPage(1);
+        setDisplayData(regions.slice(0, 3));
+      }
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 1) {
+      const prevPage = currentPage - 1;
+      setCurrentPage(prevPage);
+      
+      if (activeTab === "countries") {
+        const startIndex = (prevPage - 1) * limit;
+        const endIndex = startIndex + limit;
+        setDisplayData(countries.slice(startIndex, endIndex));
+      } else {
+        const startIndex = (prevPage - 1) * limit;
+        const endIndex = startIndex + limit;
+        setDisplayData(regions.slice(startIndex, endIndex));
+      }
+    } else {
+      // Loop to last page
+      if (activeTab === "countries") {
+        const lastPage = Math.ceil(countries.length / limit);
+        setCurrentPage(lastPage);
+        const startIndex = (lastPage - 1) * limit;
+        setDisplayData(countries.slice(startIndex));
+      } else {
+        const lastPage = Math.ceil(regions.length / limit);
+        setCurrentPage(lastPage);
+        const startIndex = (lastPage - 1) * limit;
+        setDisplayData(regions.slice(startIndex));
+      }
+    }
+  };
+
+  // Get background color based on index
+  const getCardColor = (index) => {
+    const colors = ["#00C896", "#006752", "#FFB94A"];
+    return colors[index % colors.length];
+  };
+
   return (
     <div className="bg-white py-12 md:py-16 lg:py-20">
       <div className="container w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,12 +253,13 @@ const PopularDestination = () => {
               <input
                 type="text"
                 placeholder="Search here"
+                value={searchQuery}
+                onChange={handleSearch}
                 className="w-full px-4 py-3 pl-12 rounded-full border border-gray-200 focus:outline-none focus:border-[#00C896] text-sm text-[#9E9E9E] font-inter-tight"
               />
             </div>
 
             {/* View All Button */}
-
             <Link href="/destinations">
               <button className="bg-[#00C896] text-white  rounded-full  text-[16px] font-inter-tight font-semibold flex items-center  hover:bg-[#048f6c] transition-colors whitespace-nowrap">
                 <span className="pl-6 pr-2 py-2"> View All</span>
@@ -105,7 +296,10 @@ const PopularDestination = () => {
 
             {/* Navigation Arrows */}
             <div className="flex gap-3 pt-4">
-              <button className="w-10 h-10 rounded-full bg-[#EEEEEE] text-[#0A0A0A] flex items-center justify-center hover:border-[#00C896] transition-colors">
+              <button 
+                onClick={handlePrev}
+                className="w-10 h-10 rounded-full bg-[#EEEEEE] text-[#0A0A0A] flex items-center justify-center hover:border-[#00C896] transition-colors"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
@@ -114,7 +308,10 @@ const PopularDestination = () => {
                   <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
                 </svg>
               </button>
-              <button className="w-10 h-10 rounded-full bg-[#00C896] text-[#0A0A0A] hover:border-[#EEEEEE] flex items-center justify-center transition-colors">
+              <button 
+                onClick={handleNext}
+                className="w-10 h-10 rounded-full bg-[#00C896] text-[#0A0A0A] hover:border-[#EEEEEE] flex items-center justify-center transition-colors"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
@@ -128,76 +325,81 @@ const PopularDestination = () => {
 
           {/* Right Content - Destination Cards */}
           <div className="flex gap-5 pb-4 overflow-x-auto scrollbar-hide w-full ">
-            {/* New Zealand Card */}
-            <div className="bg-[#00C896] min-w-[260px]  rounded-3xl p-6 text-white flex-shrink-0 space-y-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center">
-                <Image
-                  src={newZealandFlag}
-                  alt="New Zealand flag"
-                  width={100}
-                  height={100}
-                  className=" rounded-full"
-                />
+            {loading && (
+              <div className="w-full text-center py-8">
+                <p className="text-gray-600">Loading...</p>
               </div>
-              <div className="mb-8 md:mb-16">
-                <h3 className="text-xl md:text-[28px] font-inter-tight font-semibold">
-                  {" "}
-                  New Zealand
-                </h3>
-                <p className="text-sm md:text-[18px]  font-inter-tight">
-                  Start from $9.99
-                </p>
-              </div>
-              <button className=" w-full bg-white text-[#00C896] py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
-                View Details
-              </button>
-            </div>
+            )}
 
-            {/* Japan Card */}
-            <div className="bg-[#006752] min-w-[260px]  rounded-3xl p-6 text-white flex-shrink-0 space-y-4 ">
-              <div className="w-12 h-12  rounded-full flex items-center justify-center">
-                <Image
-                  src={japanFlag}
-                  alt="Japan flag"
-                  width={100}
-                  height={100}
-                />
+            {error && (
+              <div className="w-full text-center py-8">
+                <p className="text-red-600">{error}</p>
               </div>
-              <div className="mb-8 md:mb-16">
-                <h3 className="text-xl md:text-[28px] font-inter-tight font-semibold">
-                  Japan
-                </h3>
-                <p className="text-sm md:text-[18px]  font-inter-tight">
-                  Start from $9.99
-                </p>
-              </div>
-              <button className="w-full bg-white text-[#00C896] py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
-                View Details
-              </button>
-            </div>
+            )}
 
-            {/* Germany Card */}
-            <div className="bg-[#FFB94A] min-w-[260px]  rounded-3xl p-6 text-white flex-shrink-0 space-y-4">
-              <div className="w-12 h-12  rounded-full flex items-center justify-center overflow-hidden">
-                <Image
-                  src={germanyFlag}
-                  alt="Germany flag"
-                  width={100}
-                  height={100}
-                />
+            {!loading && !error && displayData.length === 0 && (
+              <div className="w-full text-center py-8">
+                <p className="text-gray-600">No {activeTab === "countries" ? "countries" : "regions"} found.</p>
               </div>
-              <div className="mb-8 md:mb-16">
-                <h3 className="text-xl md:text-[28px] font-inter-tight font-semibold">
-                  Germany
-                </h3>
-                <p className="text-sm md:text-[18px]  font-inter-tight">
-                  Start from $9.99
-                </p>
+            )}
+
+            {!loading && !error && activeTab === "countries" && displayData.map((country, index) => (
+              <div
+                key={country._id}
+                style={{ backgroundColor: getCardColor(index) }}
+                className="min-w-[260px] rounded-3xl p-6 text-white flex-shrink-0 space-y-4"
+              >
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden bg-white">
+                  <img
+                    src={country.flag}
+                    alt={`${country.name} flag`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mb-8 md:mb-16">
+                  <h3 className="text-xl md:text-[28px] font-inter-tight font-semibold">
+                    {country.name}
+                  </h3>
+                  <p className="text-sm md:text-[18px] font-inter-tight">
+                    {country.start_from > 0 
+                      ? `Start from $${country.start_from.toFixed(2)}`
+                      : "Free package available"}
+                  </p>
+                </div>
+                <button className="w-full bg-white text-[#00C896] py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
+                  View Details
+                </button>
               </div>
-              <button className="w-full bg-white text-[#00C896] py-2  rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
-                View Details
-              </button>
-            </div>
+            ))}
+
+            {!loading && !error && activeTab === "region" && displayData.map((region, index) => (
+              <div
+                key={region._id}
+                style={{ backgroundColor: getCardColor(index) }}
+                className="min-w-[260px] rounded-3xl p-6 text-white flex-shrink-0 space-y-4"
+              >
+                <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden bg-white">
+                  <img
+                    src={region.image}
+                    alt={`${region.name} image`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mb-8 md:mb-16">
+                  <h3 className="text-xl md:text-[28px] font-inter-tight font-semibold">
+                    {region.name}
+                  </h3>
+                  <p className="text-sm md:text-[18px] font-inter-tight">
+                    {region.start_from > 0 
+                      ? `Start from $${region.start_from.toFixed(2)}`
+                      : "Free package available"}
+                  </p>
+                </div>
+                <button className="w-full bg-white text-[#00C896] py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
+                  View Details
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </div>
