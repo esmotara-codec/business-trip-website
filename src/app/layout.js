@@ -1,6 +1,7 @@
 import { Barlow_Condensed, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/shared/NavBar";
+import Providers from "./provider";
 
 const interTight = Inter_Tight({
   subsets: ["latin"],
@@ -24,8 +25,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${interTight.variable} ${barlowCondensed.variable} antialiased`}
       >
-        <NavBar/>
+        <Providers >
+          <NavBar/>
         {children}
+        </Providers>
       </body>
     </html>
   );
