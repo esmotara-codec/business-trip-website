@@ -17,8 +17,8 @@ const Footer = () => {
             <Image src={logoName} alt="logo name" width={70} height={70} />
           </Link>
 
-          <p className="font-inter-tight text-[16px] text-[#4A4A4A] font-normal ">
-            Instant eSIM Data forTravelers - Connect in 180+ <br /> Countries.
+          <p className="font-inter-tight text-[16px] text-[#4A4A4A] font-normal">
+            Instant eSIM Data forTravelers - Connect in 180+  Countries.
           </p>
         </footer>
       </Container>
